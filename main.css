@@ -1,0 +1,12 @@
+
+.ticker {
+    width: 100%;
+    height: 20vh;
+    background-color: yellow;
+}
+
+.ticker-alt {
+    width: 100%;
+    height: 20vh;
+    background-color: red;
+}
