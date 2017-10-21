@@ -12,12 +12,13 @@ body {
     border: 1px solid black;
 }
 
-.bg-yellow {
-    background-color: yellow;
+.dark {
+    background-color: #001f3f;
+    color: rgb(127, 191, 255);
 }
 
-.bg-red {
-    background-color: red;
+.light {
+    background-color: #0074D9;
 }
 
 .ticker {
