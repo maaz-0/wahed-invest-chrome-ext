@@ -1,6 +1,7 @@
 "use strict";
 
+const apiKey = '9O46WYH5QWK1N8CF';
+
 function initialize(){
-    $('#amigx').text('YOYOMA')
     console.log('hello, world');
 }
