@@ -3,10 +3,9 @@
 const url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={0}&apikey=9O46WYH5QWK1N8CF'
 var tickers = ['AMIGX', 'AMINX', 'AMIDX', 'GLD', 'WISEX'];
 
-function initialize(){
-    console.log('hello, world');
-    $('#amigx').on('click', updatePrices);
-}
+$(document).on('DOMContentLoaded', function() {
+    updatePrices();
+})
 
 function updatePrices() {
 

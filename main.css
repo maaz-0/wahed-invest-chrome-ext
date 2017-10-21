@@ -4,6 +4,8 @@ body {
     margin: 0 0 0 0;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
+    height: 550px;
+    width: 400px;
 }
 
 .container {

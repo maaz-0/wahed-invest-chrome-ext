@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Wahed Invest Chrome Extension",
+    "version": "1.0",
+    "description": "A small chrome extension to get the latest stock prices of the Wahed Invest portfolio",
+    "icons": {
+        "48": "./icons/main-icon48.png",
+        "128": "./icons/main-icon128.png"
+    },
+    "browser_action": {
+        "default_title": "Wahed Invest Lookup",
+        "default_popup": "main.html"
+    }
+}
