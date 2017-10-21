@@ -57,3 +57,11 @@ body {
     content: url('./icons/black-dash.png');
 }
 
+.price > span.up::after {
+    content: url('./icons/up-green-arrow.png');
+}
+
+.price > span.down::after {
+    content: url('./icons/down-red-arrow.png');
+}
+

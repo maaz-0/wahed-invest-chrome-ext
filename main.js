@@ -17,11 +17,25 @@ function updatePrices() {
             var dailyPrices = data['Time Series (Daily)'];
             
             var keys = Object.keys(dailyPrices);
-            var recentClosingPriceString = dailyPrices[keys[0]]['4. close'];
-            var recentClosingPriceDecimal = parseFloat(recentClosingPriceString).toFixed(2);
+            var recentClosingPrice = getPriceForDay(dailyPrices[keys[0]]);
+            var priorClosingPrice = getPriceForDay(dailyPrices[keys[1]]);
             
-            $(id + '-price').text('$' + recentClosingPriceDecimal);
+            var selector = id + '-price > span';
+            $(selector).text('$' + recentClosingPrice);
+
+            if (recentClosingPrice > priorClosingPrice) {
+                $(selector).removeClass('down').addClass('up');
+            } else if (recentClosingPrice < priorClosingPrice) {
+                $(selector).removeClass('up').addClass('down');
+            } else {
+                $(selector).removeClass('up down');
+            }
         });
     });
     
+}
+
+function getPriceForDay(day) {
+    var priceString = day['4. close'];
+    return parseFloat(priceString).toFixed(2);
 }
