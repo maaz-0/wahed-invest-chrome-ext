@@ -1,16 +1,22 @@
 "use strict";
 
-const url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={0}&apikey=9O46WYH5QWK1N8CF'
+const alphaVantageUrl = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={0}&apikey=9O46WYH5QWK1N8CF';
+const yahooFinanceUrl = 'https://finance.yahoo.com/quote/{0}/';
 var tickers = ['AMIGX', 'AMINX', 'AMIDX', 'GLD', 'WISEX'];
 
 $(document).on('DOMContentLoaded', function() {
     updatePrices();
 })
 
+$('.container').on('click', function() {
+    var ticker = $(this).attr('id');
+    chrome.tabs.create({url: yahooFinanceUrl.replace('{0}', ticker.toUpperCase())});
+});
+
 function updatePrices() {
 
     tickers.forEach(function(ticker) {
-        $.get(url.replace('{0}', ticker), function(data) {
+        $.get(alphaVantageUrl.replace('{0}', ticker), function(data) {
             
             var id = '#' + ticker.toLowerCase();
             var dailyPrices = data['Time Series (Daily)'];

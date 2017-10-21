@@ -6,6 +6,7 @@ body {
     font-weight: bold;
     height: 550px;
     width: 400px;
+    cursor: pointer;
 }
 
 .container {
