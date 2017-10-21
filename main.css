@@ -1,13 +1,22 @@
 
-.cell {
+body {
+    border: 1px solid black;
+    margin: 0 0 0 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+.container {
     width: 100%;
     height: 20vh;
+    border: 1px solid black;
+}
+
+.bg-yellow {
     background-color: yellow;
 }
 
-.cell-alt {
-    width: 100%;
-    height: 20vh;
+.bg-red {
     background-color: red;
 }
 
@@ -27,12 +36,24 @@
     font-size: 300%;    
 }
 
-.ticker > span,
-.price > span {
+.row {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.ticker > span {
+    padding-left: 1em;
+}
+
+.price > span {
+    padding-right: 1em;
+}
+
+.price > span::after {
+    content: url('./icons/black-dash.png');
 }
 

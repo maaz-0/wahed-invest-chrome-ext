@@ -20,7 +20,7 @@ function updatePrices() {
             var recentClosingPriceString = dailyPrices[keys[0]]['4. close'];
             var recentClosingPriceDecimal = parseFloat(recentClosingPriceString).toFixed(2);
             
-            $(id + ' > .price > span').text('$' + recentClosingPriceDecimal);
+            $(id + '-price').text('$' + recentClosingPriceDecimal);
         });
     });
     
