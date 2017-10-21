@@ -18,14 +18,14 @@ function updatePrices() {
     tickers.forEach(function(ticker) {
         $.get(alphaVantageUrl.replace('{0}', ticker), function(data) {
             
-            var id = '#' + ticker.toLowerCase();
+            var id = ticker.toLowerCase();
             var dailyPrices = data['Time Series (Daily)'];
             
             var keys = Object.keys(dailyPrices);
             var recentClosingPrice = getPriceForDay(dailyPrices[keys[0]]);
             var priorClosingPrice = getPriceForDay(dailyPrices[keys[1]]);
             
-            var selector = id + '-price > span';
+            var selector = '#' + id + '-price > span';
             $(selector).text('$' + recentClosingPrice);
 
             if (recentClosingPrice > priorClosingPrice) {
